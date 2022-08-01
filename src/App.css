@@ -14,7 +14,7 @@
   background-size: 100%;
   background-position: center 0px;
   transition: 0.5s;
-  animation: example 90s linear infinite ;
+  animation: example 190s linear infinite ;
 
 }
 .lane::after{

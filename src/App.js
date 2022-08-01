@@ -45,7 +45,7 @@ function App() {
         bottom: 100,
         left: Math.floor(Math.random() * 100),
         die : false,
-        type: Math.floor(Math.random() * 11),
+        type: Math.floor(Math.random() * 15),
         position: list.length + i
       });
      }
