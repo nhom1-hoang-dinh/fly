@@ -56,7 +56,7 @@ function App() {
       setAction(2);
       tick();
     }
-    let id = setInterval(tick, 4500);
+    let id = setInterval(tick, 5000);
     return () => clearInterval(id);
   }, [list, action]);
   
