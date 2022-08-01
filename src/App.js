@@ -60,21 +60,7 @@ function App() {
     return () => clearInterval(id);
   }, [list, action]);
   
-  function changeStatusRocket(){
-    const arrList = [];
-     list.forEach((value) => {
-      if(value.die){
-        arrList.push(value);
-        return;
-      }
-      arrList.push({ text: value.text, 
-        bottom: value.bottom, 
-        left: value.left,
-        die: true
-      });
-     })
-     setList(arrList);
-  }
+ 
   function checkText($text){
     if($text == '' || $text == ''){
       return;
@@ -87,36 +73,50 @@ function App() {
         addPoint = addPoint +1;
       })
     }else{
-
       list.filter(val => (val.text == $text && val.die == false && val.bottom < 100)).forEach((value)=> {
         ArrTextList[value.position].die = true;
         addPoint = addPoint +1;
       })
     }
-    if(point + addPoint < 5){
-      setLevel(1);
-    }else if(point + addPoint < 10){
-      setLevel(2);
-    }else if(point + addPoint < 20){
-      setLevel(3);
-    }else if(point + addPoint < 40){
-      setLevel(4);
-    }else if(point + addPoint < 60){
-      setLevel(5);
-    }else if(point + addPoint < 80){
-      setLevel(6);
-    }else if(point + addPoint < 100){
-      setLevel(7);
-    }else if(point + addPoint < 140){
-      setLevel(8);
-    }else if(point + addPoint < 180){
-      setLevel(9);
-    }else if(point + addPoint < 260){
-      setLevel(10);
-    }else if(point + addPoint < 360){
-      setLevel(11);
-    }else if(point + addPoint < 490){
-      setLevel(12);
+    switch (true) {
+      case (point + addPoint < 5):
+        setLevel(1);
+        break;
+      case (point + addPoint < 10):
+        setLevel(2);
+        break;
+      case (point + addPoint < 20):
+        setLevel(3);
+        break;
+      case (point + addPoint < 40):
+        setLevel(4);
+        break;
+      case (point + addPoint < 60):
+        setLevel(5);
+        break;
+      case (point + addPoint < 80):
+        setLevel();
+        break;
+      case (point + addPoint < 100):
+        setLevel(7);
+        break;
+      case (point + addPoint < 140):
+        setLevel(8);
+        break;
+      case (point + addPoint < 180):
+        setLevel(9);
+        break;
+      case (point + addPoint < 260):
+        setLevel(10);
+        break;
+      case (point + addPoint < 360):
+        setLevel(11);
+        break;
+      case (point + addPoint < 490):
+        setLevel(12);
+        break;
+      default:
+        break;
     }
     setPoint(point + addPoint);
     setList(ArrTextList);
@@ -144,7 +144,7 @@ function App() {
       <div className='sky'>
         <div className='lane'></div>
         <div className='car'>
-          <img src={maybay} className="maybay" alt="logo" onClick={changeStatusRocket}/>
+          <img src={maybay} className="maybay" alt="logo"/>
         </div>
       </div>
       <div className="listText">
