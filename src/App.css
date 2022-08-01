@@ -1,0 +1,240 @@
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+.App {
+  text-align: center;
+}
+.sky{
+  background-color: #01283D;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-image: url(./bg.svg);
+  background-repeat: repeat-y;
+  background-size: 100%;
+  background-position: center 0px;
+  transition: 0.5s;
+  animation: example 90s linear infinite ;
+
+}
+.lane::after{
+  position: fixed;
+  top: -100vh;
+  left: 50%;
+  width: 120px;
+  height: 200vh;
+  content:'';
+  background: transparent;
+  transform: translate(-5px,0);
+  border-left: 10px dashed #fff;
+  opacity: 0.3;
+  animation: line1 3s linear infinite;
+  z-index: -1;
+}
+@keyframes line1 {
+  from   { top: -100vh;}
+  to  { top: 0;}
+}
+@keyframes example {
+  from   { background-position: center 0px;}
+  to  { background-position: center -700%;}
+}
+
+header{
+  position: fixed;
+  top: 0;
+  left:0;
+  width:100vw;
+  z-index: 1111111111111;
+  color: #fff;
+  padding:20px;
+
+}
+.maybay{
+  position: fixed;
+  bottom: 15%;
+  left:50%;
+  width:100px;
+  transform: translate(-50%,0);
+  animation: maybay1 1s linear infinite alternate;
+}
+.lane{
+    position: fixed;
+    top: 0px;
+    left: 50%;
+    width: 120px;
+    height: 100%;
+    content:'';
+    background: transparent;
+    transform: translate(-50%,0);
+    background-color: #022D44;
+    border-left: 1px solid #85e1f8;
+    border-right: 1px solid #85e1f8;
+    box-shadow: 0 0 25px #417886;
+    opacity: 0.6;
+
+  }
+  .lane::before{
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    width: 100px;
+    height: 300px;
+    content:'';
+    background: transparent;
+    transform: translate(-50%,0);
+    background-image: linear-gradient(to bottom, transparent, #F39666, #DE5243, transparent);
+  }
+@keyframes maybay1 {
+  from   {  transform: translate(-50%,0);}
+  to  {  transform: translate(-50%,-30px);}
+}
+.listText li{
+  position: fixed;
+  color:#fff;
+  list-style: none;
+  bottom:10%;
+  left:50%;
+  transition: 6s;
+  background-image: url(./rocket.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height:50px;
+  width:50px;
+}
+.listText .icon-boom{
+  background-image: url(./booom.svg);
+}
+.listText li .text{
+  background-color: #efefef;
+  color:#555;
+  border-radius: 5px;
+  height:20px;
+  position: absolute;
+  padding-top:5px;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  padding: 0 5px;
+  left:80%;
+}
+.die .boom{
+  width:70px;
+  height:70px;
+  position: absolute;
+  top:0;
+  left:0;
+  content: '';
+}
+.die{
+  animation: bom1 1s linear 5s forwards;
+}
+.die .text{
+  display: none;
+}
+@keyframes bom1 {
+  0%{ opacity: 1;}
+  20%{ opacity: 0;}
+  40%{ opacity: 1;}
+  60%{ opacity: 0;}
+  80%{ opacity: 1;}
+  100%{ opacity: 0;}
+
+}
+.die .boom .dot{
+  position: fixed;
+  bottom:20%;
+  left:50%;
+  width:10px;
+  height: 10px;
+  content: '';
+  background-color: #97e2f5;
+  box-shadow: 0 0 5px #417886;
+  border-radius: 50%;
+  transition: 5s linear;
+  animation: dot 1s linear 4s forwards;
+}
+@keyframes dot {
+  from{opacity: 1;}
+  to{opacity: 0;}
+
+}
+.form-begin{
+  position: fixed;
+  z-index: 1111111111111111111111;
+  top:50%;
+  left:50%;
+  width:300px;
+  min-height: 300px;
+  background-color: transparent;
+  border-radius: 20px;
+  transform: translate(-50%,-50%);
+  padding:50px 10px 10px 10px;
+}
+.f-paci{
+  font-family: 'Pacifico', cursive;
+}
+.text-warning{
+  color:yellow;
+}
+.btn{
+    color:#866d6a;
+    font-family: 'Pacifico', cursive;
+    position: relative;
+    font-weight: bold;
+    font-size: 20px;
+    background: #EAC992;
+    padding:10px 20px 15px;
+    border-radius: 10px;
+    border: 5px solid #967A76;
+    cursor: pointer;
+}
+.btn::after{
+  position: absolute;
+  bottom:5px;
+  left:0;
+  content: '';
+  width:100%;border-radius: 10px;
+  height:30px;
+  border-bottom: 2px solid #967A76;
+}
+.inputtext{
+  background:transparent;
+  border-color:transparent;
+  outline: none;
+  border-bottom:1px solid rgb(120, 117, 117);
+  text-align:center;
+  color:#fff;
+   font-family: 'Pacifico', cursive;
+   margin-top:20px;
+   font-size: 20px;
+}
+.beginning{
+  opacity: 0.6;
+}
+.form-help{
+  position: fixed;
+  top:50%;
+  left:50%;
+  transform:translate(-50%, -50%);
+  text-align: center;
+  width:500px;
+  z-index: 1111111111111111111111111111;
+}
+.form-help::before{
+  position:fixed;
+  top:0;
+  left:0;
+  width:100%;
+  height:100%;
+  background:#000;
+  opacity:0.3;
+  content:'';
+  border-radius: 20px;
+}
+.form-help img{
+  width:100%;
+  margin-bottom:10px;
+  position: relative;
+  border-radius: 20px;
+  
+}
