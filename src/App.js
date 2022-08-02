@@ -95,7 +95,7 @@ function App() {
         setLevel(5);
         break;
       case (point + addPoint < 80):
-        setLevel();
+        setLevel(6);
         break;
       case (point + addPoint < 100):
         setLevel(7);
